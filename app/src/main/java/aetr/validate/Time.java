@@ -1,7 +1,7 @@
 package aetr.validate;
 
 public enum Time {
-    DAY, DAYregular, DAYreduced, DAYpart, WEEK, WEEKregular, WEEKreduced,;
+    DAY, DAYregular, DAYreduced, DAYpart, WEEK, WEEKregular, WEEKreduced;
     public long val() {
         long l = 60 * 60 * 1000;
         switch(this) {
