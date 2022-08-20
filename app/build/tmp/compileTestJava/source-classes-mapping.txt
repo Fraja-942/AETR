@@ -1,2 +1,0 @@
-aetr/AppTest.java
- aetr.AppTest
