@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="aetr.AppTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2022-08-20T14:49:10" hostname="LAPTOP-3IS2PQRP" time="0.028">
+  <properties/>
+  <testcase name="testDailyRest_0" classname="aetr.AppTest" time="0.013"/>
+  <testcase name="testDailyRest_1" classname="aetr.AppTest" time="0.001"/>
+  <testcase name="testDailyRest_2" classname="aetr.AppTest" time="0.002"/>
+  <testcase name="testDailyRest_3" classname="aetr.AppTest" time="0.001"/>
+  <testcase name="testDailyRest_4" classname="aetr.AppTest" time="0.002"/>
+  <testcase name="testWeeklyRest_0" classname="aetr.AppTest" time="0.002"/>
+  <testcase name="testWeeklyRest_1" classname="aetr.AppTest" time="0.002"/>
+  <testcase name="testWeeklyRest_2" classname="aetr.AppTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

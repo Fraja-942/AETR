@@ -3,9 +3,8 @@
  */
 package aetr;
 
-import aetr.Data.RestTime;
-import aetr.Data.RestTimeList;
-import aetr.validate.DailyRest;
+import aetr.data.RestTime;
+import aetr.data.RestTimeList;
 import aetr.validate.DailyRestException;
 import aetr.validate.RestSubsequence;
 import aetr.validate.WeeklyRestException;
@@ -36,6 +35,23 @@ public class AppTest {
     }
 
     @Test
+    public void testWeeklyRest_0() throws ParseException {
+        String[] t = {"11 08 2022 00:00", "11 08 2022 03:00",
+                "13 08 2022 00:00", "16 08 2022 12:00",
+                "17 08 2022 22:00", "18 08 2022 15:00"};
+        RestTimeList restTimeList = new RestTimeList();
+        List<RestTime> list = restTimeList.getRestTimeList(Data(t));
+        String message = "Ok";
+        try {
+            RestSubsequence subsequence = new RestSubsequence(list);
+            subsequence.validate();
+        }catch (WeeklyRestException e){
+            message = e.getMessage();
+        }
+        assertEquals("Ok", message);
+    }
+
+    @Test
     public void testWeeklyRest_1() throws ParseException {
         String[] t = {"10 08 2022 00:00", "10 08 2022 03:00",
                 "12 08 2022 00:00", "18 08 2022 12:00",
@@ -54,9 +70,9 @@ public class AppTest {
 
     @Test
     public void testWeeklyRest_2() throws ParseException {
-        String[] t = {"06 08 2022 00:00", "06 08 2022 03:00",
-                "08 08 2022 00:00", "13 08 2022 12:00",
-                "15 08 2022 10:00", "15 08 2022 15:00"};
+        String[] t = {"07 08 2022 00:00", "07 08 2022 03:00",
+                "09 08 2022 00:00", "14 08 2022 12:00",
+                "16 08 2022 10:00", "16 08 2022 15:00"};
         RestTimeList restTimeList = new RestTimeList();
         List<RestTime> list = restTimeList.getRestTimeList(Data(t));
         String message = null;
@@ -67,6 +83,23 @@ public class AppTest {
             message = e.getMessage();
         }
         assertEquals("Article 8 (6. a. ii)", message);
+    }
+
+    @Test
+    public void testDailyRest_0() throws ParseException {
+        String[] t = {"15 08 2022 00:00", "15 08 2022 03:00",
+                "15 08 2022 15:00", "15 08 2022 22:00",
+                "16 08 2022 11:00", "16 08 2022 16:00"};
+        RestTimeList restTimeList = new RestTimeList();
+        List<RestTime> list = restTimeList.getRestTimeList(Data(t));
+        String message = "Ok";
+        try {
+            RestSubsequence subsequence = new RestSubsequence(list);
+            subsequence.validate();
+        }catch (DailyRestException e){
+            message = e.getMessage();
+        }
+        assertEquals("Ok", message);
     }
 
     @Test

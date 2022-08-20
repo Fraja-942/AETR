@@ -1,8 +1,6 @@
 package aetr.validate;
 
-import aetr.Data.RestTime;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
+import aetr.data.RestTime;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,13 +36,13 @@ public class RestSubsequence {
     private void addDailyRest(RestTime restTime, long prev_t1){
         long t0 = restTime.t0;
         long t1 = restTime.t1;
-        if (t1 - t0 >= Time.DAYpart.val() && t1 - t0 < Time.DAYreduced.val()) {
+        if (t1 - t0 >= Time.DAY_PART.val() && t1 - t0 < Time.DAY_REDUCED.val()) {
             if(part != null){
                 throw new DailyRestException("Article 1 (o) i", new RuntimeException());
             }
             part = restTime;
         }
-        else if (t1 - t0 >= Time.DAYreduced.val() && t1 - t0 < Time.DAY.val()) {
+        else if (t1 - t0 >= Time.DAY_REDUCED.val() && t1 - t0 < Time.DAY.val()) {
             {
                 long dt = 0;
                 if (part != null) {

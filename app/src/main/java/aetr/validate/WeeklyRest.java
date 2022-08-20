@@ -13,7 +13,7 @@ public class WeeklyRest implements Rest {
     }
     @Override
     public boolean getRegular() {
-        return (t1 - t0 >= Time.WEEKregular.val());
+        return (t1 - t0 >= Time.WEEK_REGULAR.val());
     }
 
     @Override
@@ -23,7 +23,7 @@ public class WeeklyRest implements Rest {
                 throw new WeeklyRestException("Article 8 (6. a.)", new RuntimeException());
             }
             if (t1 > w1) {
-                if (prev_t0 < w0 && prev_t1 - prev_t0 + w1 - t0 < Time.WEEKregular.val() + Time.WEEKreduced.val()) {
+                if (prev_t0 < w0 && prev_t1 - prev_t0 + w1 - t0 < Time.WEEK_REGULAR.val() + Time.WEEK_REDUCED.val()) {
                     throw new WeeklyRestException("Article 8 (6. a. ii)", new RuntimeException());
                 }
                 if (prev_t0 < w0 - Time.WEEK.val()) {

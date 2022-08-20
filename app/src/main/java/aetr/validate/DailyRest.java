@@ -12,7 +12,7 @@ public class DailyRest implements Rest {
 
     @Override
     public boolean getRegular() {
-        return (t1 - t0 - dt >= Time.DAYregular.val());
+        return (t1 - t0 - dt >= Time.DAY_REGULAR.val());
     }
 
     @Override
@@ -20,10 +20,10 @@ public class DailyRest implements Rest {
         if(t1 - t0 - dt >= Time.DAY.val()){
             throw new DailyRestException("Article 1 (o) i, (p) ii", new RuntimeException());
         }
-        if(prev_t1 > 0  && t0 - prev_t1 > Time.DAY.val() - Time.DAYreduced.val()){
+        if(prev_t1 > 0  && t0 - prev_t1 > Time.DAY.val() - Time.DAY_REDUCED.val()){
             throw new DailyRestException("Article 8 (2)", new RuntimeException());
         }
-        if(dt > Time.DAY.val() - Time.DAYregular.val()){
+        if(dt > Time.DAY.val() - Time.DAY_REGULAR.val()){
             throw new DailyRestException("Article 1 (o) i", new RuntimeException());
         }
     }
