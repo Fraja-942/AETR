@@ -29,18 +29,4 @@ public class RestTime {
         c0.roll(Calendar.DAY_OF_WEEK, 7);
         w1 = c0.getTimeInMillis();
     }
-
-    public static void main(String[] args){
-        Calendar c = Calendar.getInstance();
-        c.setTime(new Date());
-        System.out.println(c.get(Calendar.DAY_OF_WEEK));
-        int d = c.get(Calendar.DAY_OF_WEEK);
-        c.roll(Calendar.DAY_OF_WEEK, 2 - d);
-        System.out.println(c.get(Calendar.DAY_OF_WEEK));
-        c.roll(Calendar.DAY_OF_WEEK, 7);
-        System.out.println(c.get(Calendar.DAY_OF_WEEK));
-        c.set(Calendar.HOUR_OF_DAY, 0);
-        c.set(Calendar.MINUTE, 0);
-        c.set(Calendar.SECOND, 0);
-    }
 }
